@@ -1,14 +1,14 @@
 import ast
 from flask import Flask, request
 
-
 from handler import handler
+
 
 app = Flask(__name__)
 
 @app.route('/start/', methods=['GET'])
 def index():
-    req = request.args.get('')
+    req = request.args.get('', None)
     if req:
         try:
             data = ast.literal_eval(req)
